@@ -1,7 +1,0 @@
-Tags <w:t>: contêm o texto real
-Tags <w:p>: representam parágrafos
-Tags <w:r>: representam "runs" (trechos de texto)
-Tags <w:rPr>: propriedades de formatação (negrito, tamanho, etc.)
-
-
-<w:t xml:space="preserve">Computação Ubíqua na Educação:</w:t> titulo do documento
