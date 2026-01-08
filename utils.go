@@ -45,3 +45,11 @@ func GetImgType(name string) string {
 
 	return ""
 }
+
+
+func ConvertTwipsToMM(twips float64) float64 {
+	const twipsPerInch = 1440.0
+	const mmPerInch = 25.4
+	return (twips / twipsPerInch) * mmPerInch
+}
+

@@ -2,12 +2,16 @@ package main
 
 import "encoding/xml"
 
+
 type Paragraph struct {
-	Runs []Run `xml:"r"`
+	Properties ParagraphProperties `xml:"pPr"`
+	Runs       []Run               `xml:"r"`
 }
 type Body struct {
 	Paragraphs []Paragraph `xml:"p"`
+	Sections SectionProperties `xml:"sectPr"`
 }
+
 
 type Document struct {
 	XMLName xml.Name `xml:"document"`
@@ -22,12 +26,15 @@ type RunProperties struct {
 type Text struct {
 	Content string `xml:",chardata"`
 	Space   string `xml:"space,attr"`
+
 }
 
 type Run struct {
 	Texts      []Text        `xml:"t"`
 	Properties RunProperties `xml:"rPr"`
 	Drawing    *Drawing      `xml:"drawing"`
+	Tab 	   *struct{}      `xml:"tab"`
+	
 }
 
 type Relationship struct {
@@ -39,7 +46,30 @@ type Relationships struct {
 	XMLName xml.Name       `xml:"Relationships"`
 	Items   []Relationship `xml:"Relationship"`
 }
+type Justification struct {
+    Val string `xml:"val,attr"`
+}
 
+type Tab struct {
+	Val string `xml:"val,attr"`
+	Pos float64 `xml:"pos,attr"`
+}
+
+
+type ParagraphProperties struct {
+    Justification Justification `xml:"jc"` 
+	Tabs 	   []Tab         `xml:"tabs"`
+}
+
+type SectionProperties struct {
+	PageMargin struct {
+		Left  float64 `xml:"left,attr"`
+		Right float64 `xml:"right,attr"`
+		Top   float64 `xml:"top,attr"`
+		Bottom float64 `xml:"bottom,attr"`
+	} `xml:"pgMar"`
+}
+	
 // image
 
 type Drawing struct {
