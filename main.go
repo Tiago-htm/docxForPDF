@@ -6,13 +6,14 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"time"
 
 	//externas
 	"github.com/jung-kurt/gofpdf"
 )
 
 func main() {
-
+	inicio := time.Now()
 	pdf := gofpdf.New("P", "mm", "A4", "")
 
 	pdf.SetFont("Arial", "", 12)
@@ -21,7 +22,7 @@ func main() {
 
 	pdf.AddPage()
 
-	r, err := zip.OpenReader("teste.docx")
+	r, err := zip.OpenReader("computa.docx")
 	if err != nil {
 		log.Fatal(err, `err ao ler arquivo`)
 	}
@@ -122,6 +123,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	duracao := time.Since(inicio)
+	fmt.Printf("Tempo decorrido: %v\n", duracao)
 	fmt.Println("Escrita terminada....")
 
 }
