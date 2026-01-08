@@ -1,0 +1,49 @@
+	// if re.MatchString(f.Name){
+		// 	imgFile, err := f.Open()
+
+		// 	if err != nil {
+		// 		log.Println("Error ao pegar imagem", err)
+		// 		continue
+		// 	}
+
+		// 	info :=  pdf.RegisterImageOptionsReader(f.Name, gofpdf.ImageOptions{ImageType: "png"}, imgFile)
+
+		//      imgFile.Close()
+
+		// 	if info == nil{
+		// 		log.Println("Erro ao registrar", err)
+		// 		continue
+		// 	}
+		// 	info =  pdf.GetImageInfo(f.Name)
+
+		// 	_,alturaCalculada := info.Extent()
+		// 	larguraDesejada := 100.0
+
+		// 	_, alturaCalculada = pdf.GetImageInfo(f.Name).Extent()
+
+		// 	x, y := pdf.GetX(), pdf.GetY()
+
+		// 	pdf.ImageOptions(f.Name, x, y, larguraDesejada, 0, false, gofpdf.ImageOptions{ImageType: ""},0,"")
+
+		// 	pdf.RegisterImageOptionsReader(f.Name, gofpdf.ImageOptions{ImageType: "png"}, imgFile)
+
+		// 	pdf.SetY(y + alturaCalculada + 5)
+
+		// }
+
+
+
+	// arquivo, err := os.Create("palavras.txt")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer arquivo.Close()
+
+	// for _, linha := range linhas {
+	// 	if linha != "" {
+	// 		_, err := arquivo.WriteString(linha + "\n")
+	// 		if err != nil {
+	// 			log.Fatal(err)
+	// 		}
+	// 	}
+	// }
